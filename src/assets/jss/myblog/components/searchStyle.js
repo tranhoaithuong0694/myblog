@@ -9,10 +9,9 @@ const searchStyle = makeStyles(theme => ({
     "&:hover": {
       backgroundColor: fade(theme.palette.common.white, 0.25)
     },
-    marginLeft: 0,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(1),
+      marginLeft: theme.spacing(2),
       width: "auto"
     }
   },
@@ -20,7 +19,6 @@ const searchStyle = makeStyles(theme => ({
     width: theme.spacing(7),
     height: "100%",
     position: "absolute",
-    pointerEvents: "none",
     display: "flex",
     alignItems: "center",
     justifyContent: "center"
@@ -30,12 +28,12 @@ const searchStyle = makeStyles(theme => ({
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 7),
-    transition: theme.transitions.create("width"),
     width: "100%",
+    transition: theme.transitions.create("width"),
     [theme.breakpoints.up("sm")]: {
-      width: 120,
+      width: 150,
       "&:focus": {
-        width: 200
+        width: 230
       }
     }
   }

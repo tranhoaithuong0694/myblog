@@ -1,38 +1,28 @@
 import React from "react";
-import classNames from "classnames";
 import AppBar from "@material-ui/core/AppBar";
 import { Toolbar } from "@material-ui/core";
-
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import Button from "@material-ui/core/Button";
 import Search from "../Search/Search";
+import Typography from "@material-ui/core/Typography";
 
-import styles from "../../assets/jss/myblog/components/headerStyle";
-
-const useStyles = makeStyles(styles);
+import headerStyle from "../../assets/jss/myblog/components/headerStyle";
+import { Link } from "react-router-dom";
 
 export default function Header(props) {
-  const classes = useStyles();
-
-  const { color, absolute, fixed, brand } = props;
-
-  const appBarClasses = classNames({
-    [classes.appBar]: true,
-    [classes[color]]: color,
-    [classes.absolute]: absolute,
-    [classes.fixed]: fixed
-  });
-  const brandComponent = <Button className={classes.title}>{brand}</Button>;
+  const classes = headerStyle();
+  const { brand } = props;
+  const brandComponent = (
+    <Typography className={classes.brand} variant="h6" noWrap>
+      <Link to="/" className={classes.brandLink}>
+        {brand}
+      </Link>
+    </Typography>
+  );
   return (
     <AppBar>
       <Toolbar>
-        <div className={classes.flex}>{brandComponent}</div>
+        {brandComponent}
         <Search />
       </Toolbar>
     </AppBar>
   );
 }
-
-Header.defaultProp = {
-  color: "red"
-};

@@ -6,7 +6,6 @@ import useStyles from "../../assets/jss/myblog/components/searchStyle";
 
 export default function Search() {
   const classes = useStyles();
-
   return (
     <div className={classes.search}>
       <div className={classes.searchIcon}>
